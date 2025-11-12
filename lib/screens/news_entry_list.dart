@@ -6,7 +6,6 @@ import 'package:football_news/widgets/news_entry_card.dart';
 import 'package:provider/provider.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 
-
 class NewsEntryListPage extends StatefulWidget {
   const NewsEntryListPage({super.key});
 
@@ -39,7 +38,12 @@ class _NewsEntryListPageState extends State<NewsEntryListPage> {
   Widget build(BuildContext context) {
     final request = context.watch<CookieRequest>();
     return Scaffold(
-      appBar: AppBar(title: const Text('News Entry List')),
+      appBar: AppBar(
+        title: const Center(child: Text('News entry list')),
+        backgroundColor: Colors.blue,
+        foregroundColor: Colors.white,
+      ),
+
       drawer: const LeftDrawer(),
       body: FutureBuilder(
         future: fetchNews(request),
